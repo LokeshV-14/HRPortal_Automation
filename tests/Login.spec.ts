@@ -32,6 +32,10 @@ test.describe('Login',async () =>{
     test('For empty username and correct password', async ({ page }) => {
         await User_login(page, '', 'staging');
     });
+
+    test('For incorrect username and empty password', async ({ page }) => {
+        await User_login(page, 'vijay@syncfusion.com', '');
+    });
     
     test('For correct username and empty password', async ({ page }) => {
         await User_login(page, 'vijays@syncfusion.com', '');
