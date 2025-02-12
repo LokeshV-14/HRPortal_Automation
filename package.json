@@ -8,10 +8,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.48.0",
     "@types/node": "^22.7.5"
   },
   "dependencies": {
+    "@playwright/test": "^1.50.1",
     "mocha": "^11.0.1",
     "mochawesome": "^7.1.3"
   }
