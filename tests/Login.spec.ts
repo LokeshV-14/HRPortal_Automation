@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test';
-import { User_login } from './Timesheet_helper';
+import { User_login } from './helper/Login_helper';
 
 test.describe('Login',async () =>{    
     
@@ -9,7 +9,7 @@ test.describe('Login',async () =>{
     });
     
     test('For empty validation', async ({ page }) => {
-        await page.goto('https://staginghr.syncfusion.com/login?ReturnUrl=%2F');
+        await page.goto('https://staginghrcore.syncfusion.com/login?ReturnUrl=%2F');
         await page.locator('#tabfocus').click();
     });
     
@@ -65,19 +65,7 @@ test.describe('Login',async () =>{
         await User_login(page, 'vijays@syncfusion.com', 'staging');
         const HomePageURL = await page.url();
         console.log('Page URL is:', HomePageURL);
-        await expect(page).toHaveURL('https://staginghr.syncfusion.com/');
+        await expect(page).toHaveURL('https://staginghrcore.syncfusion.com/');
     });
 
 })
-    
-
-
-
-
-
-
-
-
-
-
-
