@@ -26,6 +26,7 @@ export async function Timesheet_Navigation(page:Page) {
         console.error('Error while Navigation:', error);
         throw error;
     }
+    
 }
 
 //Function to select an employee in the timesheet page:
