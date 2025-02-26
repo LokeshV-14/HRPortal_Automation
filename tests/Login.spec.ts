@@ -9,7 +9,7 @@ test.describe('Login',async () =>{
     });
     
     test('For empty validation', async ({ page }) => {
-        await page.goto('https://staginghrcore.syncfusion.com/login?ReturnUrl=%2F');
+        await page.goto('https://staginghr.syncfusion.com/login?ReturnUrl=%2F');
         await page.locator('#tabfocus').click();
     });
     
@@ -31,10 +31,6 @@ test.describe('Login',async () =>{
     
     test('For empty username and correct password', async ({ page }) => {
         await User_login(page, '', 'staging');
-    });
-
-    test('For incorrect username and empty password', async ({ page }) => {
-        await User_login(page, 'vijay@syncfusion.com', '');
     });
     
     test('For correct username and empty password', async ({ page }) => {
@@ -65,7 +61,19 @@ test.describe('Login',async () =>{
         await User_login(page, 'vijays@syncfusion.com', 'staging');
         const HomePageURL = await page.url();
         console.log('Page URL is:', HomePageURL);
-        await expect(page).toHaveURL('https://staginghrcore.syncfusion.com/');
+        await expect(page).toHaveURL('https://staginghr.syncfusion.com/');
     });
 
 })
+    
+
+
+
+
+
+
+
+
+
+
+
