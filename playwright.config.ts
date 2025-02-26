@@ -28,6 +28,7 @@ export default defineConfig({
   retries:2,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+
   reporter: [
     ['dot'],
     ['json', { outputFile: 'jsonReports/jsonReport.json' }],
