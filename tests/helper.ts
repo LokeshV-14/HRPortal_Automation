@@ -73,23 +73,41 @@ export async function selectManualentry(page:Page) {
     }catch(error){
         console.error('Error while selecting the manual entry page',error);
         throw error;
+    }    
+}
+
+//Function to close the manual entry page:ex
+export async function selectCloseicon(page:Page) {
+    try{
+        //Click close button:
+        await page.locator("(//i[@class='material-icons'])[7]").click();
+    }catch(error){
+        console.error('Error while clicking close icon',error);
+        throw error;
     }
     
 }
 
 
-//Function to Open add manual entry and select the employee in the Employee name dropdown
+//Function to select the employee in the Employee name dropdown
 export async function selectEmployeeName(page: Page) {
     try {
-         await page.locator("//input[@id='employeeName_hidden']").click();
-        //  await page.locator("//input[@id='employeeName_inputSearch']").click();
-         await page.locator("(//li[@id='52814'])[2]").click();
-         await page.locator("//input[@id='employeeName_hidden']").click();
-     } catch (error) {
-         console.error('Error while selecting the employee', error);
-         throw error;
-     }
- }
+      await page.locator("//span[@id='employeeName_dropdown']").click();
+      
+      // Ensure to interact with the first visible input field
+      const input = page.locator("//input[@id='employeeName_inputSearch']").first();
+      await input.click();
+      await input.fill('Lokesh Play');
+      
+      // Select the specific list item (ensure the index matches your UI)
+      await page.locator("(//li[@id='52814'])[2]").click();
+      
+      await page.locator("//input[@id='employeeName_hidden']").click();
+    } catch (error) {
+      console.error('Error while selecting the employee:', error);
+      throw error;
+    }
+}
     
  //Function to select the office option in the manual entry page:
  export async function selectOfficeIn(page:Page) {
@@ -98,9 +116,8 @@ export async function selectEmployeeName(page: Page) {
     }catch (error){
         console.error('Error while selecting the office',error);
         throw error;
-    }
-    
- }
+    }    
+}
 
  //Function to select the Eymard completed in reader name:
  export async function selectEymardcomplex(page:Page) {
@@ -111,7 +128,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Eymard Complex in Reader name',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Eymard complex web Check in in reader name:
  export async function selectEymardwebcheckin(page:Page) {
@@ -122,7 +139,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Eymard complex web check in in Reader name',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Mathura Towers Web check in:
  export async function selectMathurawebcheckin(page:Page) {
@@ -133,7 +150,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Mathura Towers web check in in Reader name',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Mathura Towers- 1st floor:
  export async function selectMathura1stfloor(page:Page) {
@@ -144,7 +161,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Mathura Towers- 1st floor in Reader name',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Mathura Towers- 2nd floor:
  export async function selectManthura2ndfloor(page:Page) {
@@ -157,7 +174,7 @@ export async function selectEmployeeName(page: Page) {
 
     }
     
- }
+}
 
  //Function to select the Mathura Towers- 3rd floor:
  export async function selectMathura3rdfloor(page:Page) {
@@ -170,7 +187,7 @@ export async function selectEmployeeName(page: Page) {
         throw error;
     }
     
- }
+}
 
  //Function to select the Mathura Towers- 4th floor:
  export async function selectMathura4thfloor(page:Page) {
@@ -182,7 +199,7 @@ export async function selectEmployeeName(page: Page) {
         throw error;
     }
     
- }
+}
 
  //Function to select the Home option in the manual entry page:
  export async function selectHomeIn(page:Page){
@@ -192,7 +209,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Home radio button',error);
         throw error;
     }
- }
+}
 
  //Function to select the Check in radio button in the manual entry page:
  export async function selectCheckin(page:Page) {
@@ -202,7 +219,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while check in',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Check out radio button in the manual entry page:
  export async function selectCheckout(page:Page) {
@@ -213,7 +230,7 @@ export async function selectEmployeeName(page: Page) {
         throw error;
     }
     
- }
+}
 
  //Function to select the Entry check out dropdown for Lunch:
  export async function selectLunchout(page:Page) {
@@ -224,7 +241,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting the Lunch in checkout type',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Entry check out dropdown for Work wrap up
  export async function selectWorkwrapup(page:Page) {
@@ -235,7 +252,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting the work wrap up in checkout type',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Entry check out dropdown for Mobile Test/Dev:
  export async function selectMobiletestdev(page:Page) {
@@ -248,7 +265,7 @@ export async function selectEmployeeName(page: Page) {
         throw error;
     }
     
- }
+}
 
  //Function to select the Permission of the manual entry page:
  export async function selectPermission(page:Page) {
@@ -259,7 +276,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Permission in the checkout type',error);
         throw error;
     }    
- }
+}
 
  //Function to selet the Break option in the Manual entry page:
  export async function selectBreak(page:Page) {
@@ -270,7 +287,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Break as checkout type',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Others in the Manual entry check out type.
  export async function selectOthers(page:Page) {
@@ -281,7 +298,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting Other in the checkout type entry',error);
         throw error;
     }    
- }
+}
 
  //Function to select the Date in the calender of the manual entry page:
  export async function selectEntrydate(page:Page) {
@@ -293,7 +310,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while enter the date in the date field',error);
         throw error;
     }    
- }
+}
 
  //Function to select the AM in the manual entry page:
  export async function selectEntrytimeAM(page:Page) {
@@ -303,7 +320,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting the AM in Entry time',error);
         throw error;
     }    
- }
+}
 
  //Function to select the PM in the manual entry page:
  export async function selectEntrytimePM(page:Page) {
@@ -313,7 +330,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while select the PM in Entry time',error);
         throw error;
     }    
- }
+}
 
  //Function in the grid search:
  export async function selectSearchgrid(page:Page) {
@@ -324,7 +341,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while clicking search icon in the grid',error);
         throw error;
     }    
- }
+}
 
  //Function to click and check the export:
  export async function selectExportbutton(page:Page) {
@@ -335,7 +352,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while clicking export option',error);
         throw error;
     }    
- }
+}
 
  //Function to Open the accordion of the entry.
  export async function selectOpenaccordion(page:Page) {
@@ -345,7 +362,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while clicking accordian for the entry',error);
         throw error;
     }
- }
+}
 
  //Function to click 1st gear icon in the child entry grid of timesheet page:
  export async function select1stgearicon(page:Page) {
@@ -355,7 +372,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while clicking 1st gear icon',error);
         throw error;
     }    
- }
+}
 
  //Function to Edit the in entry for the first gear icon:
  export async function selectEditcheckin(page:Page) {
@@ -377,7 +394,7 @@ export async function selectEmployeeName(page: Page) {
         throw error;
     }
     
- }
+}
 
   //Function edit checkout manual entry:
   export async function selectEditcheckout(page:Page) {
@@ -400,7 +417,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while selecting the edit manual entry',error);
         throw error;
     }    
- }
+}
 
 
  //Function to Delete the in entry for the first gear icon:
@@ -413,7 +430,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while deleting the check in entry',error);
         throw error;
     }
- }
+}
 
  //Function to Delete the out entry for the first gear icon:
  export async function selectDeleteout(page:Page){
@@ -426,7 +443,7 @@ export async function selectEmployeeName(page: Page) {
         throw error;
     }
     
- }
+}
 
  //Function to click 2nd gear icon in the entry grid:
  export async function select2ndgearicon(page:Page){
@@ -436,7 +453,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while click 2nd gear icon',error);
         throw error;
     }
- }
+}
 
 
 //  //Function to edit check in entry for second gear icon:
@@ -493,7 +510,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while deleting the check in in 2nd gear',error);
         throw error;
     }    
- }
+}
 
  //Function to delete check out entry for third gear icon:
  export async function select3rdgearicon(page:Page) {
@@ -503,7 +520,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while clicking 3rd gear icon',error);
         throw error;
     }    
- }
+}
 
   //Function to delete check out entry for fourth gear icon:
   export async function select4thgearicon(page:Page) {
@@ -513,7 +530,7 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while clicking 4th gear icon',error);
         throw error;
     }    
- }
+}
 
 
    //Function to delete check out entry for fourth gear icon:
@@ -524,5 +541,5 @@ export async function selectEmployeeName(page: Page) {
         console.error('Error while clicking 5th gear icon',error);
         throw error;
     }    
- }
+}
 
