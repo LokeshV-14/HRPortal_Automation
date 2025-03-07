@@ -25,10 +25,9 @@ export default defineConfig({
   },
 
   //Retries the test for 2 times when it gets failed.
-  retries:2,
+  //retries:2,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-
   reporter: [
     ['dot'],
     ['json', { outputFile: 'jsonReports/jsonReport.json' }],
@@ -36,7 +35,7 @@ export default defineConfig({
   ],
 
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -53,7 +52,7 @@ export default defineConfig({
     trace: 'on',
     screenshot: 'on',
     video: 'on',
-    headless: true,
+    headless: false,
   },
 
   /* Configure projects for major browsers */
