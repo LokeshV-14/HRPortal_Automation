@@ -28,10 +28,17 @@ export default defineConfig({
   //retries:2,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  // reporter: [
+  //   ['dot'],
+  //   ['json', { outputFile: 'jsonReports/jsonReport.json' }],
+  //   ['html', { open: 'never' }],
+  // ],
+
   reporter: [
-    ['dot'],
-    ['json', { outputFile: 'jsonReports/jsonReport.json' }],
-    ['html', { open: 'never' }],
+    ['monocart-reporter', {
+      name:"TestReport",
+      outputFile:"./test-results/reports.html",
+    }]
   ],
 
   /* Run tests in files in parallel */

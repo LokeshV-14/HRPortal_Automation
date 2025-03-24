@@ -121,30 +121,6 @@ export class Create_Permission {
         await expect(permissionTypeField).toHaveText("General Permission");
     }
 
-    // async copyurlValidationinnewtab(){        
-    //     // Click the copy icon
-    //     await this.page.getByText('content_copyCopy Attachment').click();
-        
-    //         // Get the copied text (URL) from clipboard
-    //     const copiedURL = await this.page.evaluate(() => navigator.clipboard.readText());
-        
-    //     console.log('Copied URL:', copiedURL);
-        
-    //         // Validate that copied content is a URL
-    //     expect(copiedURL).toMatch("https://files2.syncfusion.com/HRPortal/Attendance/224789/3-mb-sample-pdf-file_06032025001409.pdf");
-        
-    //         // Open a new tab in the same browser context
-    //     const newTab = await this.page.context().newPage();
-        
-    //         // Navigate to the copied URL
-    //     await newTab.goto(copiedURL);
-        
-    //         // Wait for the page to load
-    //     await newTab.waitForLoadState('load');
-        
-    //     console.log('New tab loaded with URL:', await newTab.url());
-    // }
-
     async changeOpenstatus(){
         await this.page.getByRole('combobox', { name: 'Closed' }).locator('span').click();
         await this.page.waitForTimeout(1000);
@@ -201,6 +177,92 @@ export class Create_Permission {
         //await expect(this.page.getByText('Comment has been updated.')).toBeVisible();
     }
 
+    async statuscancelValidation(){
+        await this.page.getByRole('combobox', { name: 'Open' }).locator('span').click();
+        await this.page.getByRole('option', { name: 'Cancelled' }).click();
+        await this.page.locator('#Statuscomments_rte-edit-view').click();
+        await this.page.locator('#Statuscomments_rte-edit-view').fill('Test');
+        await this.page.locator('#TaskStatusUpdateClick').click();
+    }
 
+    async deletepermissionValidation(){
+        await this.page.locator('#DeleteLeave').click();
+        await this.page.locator('#deleteleave').click();
+        //await expect(this.page.getByText('Permission Request has been')).toBeVisible();
+    }
 
+    async latenightPermissioncreation(){
+        await this.page.goto('https://staginghr.syncfusion.com/attendance/create?view=permission');
+        await this.page.locator('.e-input-group').first().click();
+        await this.page.getByRole('dialog', { name: 'engineer' }).getByRole('combobox').fill('Lokesh');
+        await this.page.getByText('Lokesh Playwright -').click();
+        await this.page.getByRole('combobox', { name: 'General Permission' }).click();
+        await this.page.getByText('Late Night Permissionnull').click();
+        await this.page.locator('#summary').click();
+        await this.page.locator('#summary').fill('Test Late night permission');
+        await this.page.locator('#leavesystemdescription_rte-edit-view').click();
+        await this.page.locator('#leavesystemdescription_rte-edit-view').fill('Test Late night permission');
+        await this.page.getByRole('button', { name: 'select' }).click();
+        await this.page.getByText('20', { exact: true }).click();
+        await this.page.locator('.startTime > .inputdiv > .e-input-group > .e-input-group-icon').click();
+        await this.page.getByRole('option', { name: '02:00 PM' }).click();
+        await this.page.getByLabel('', { exact: true }).nth(1).click();
+        await this.page.waitForTimeout(3000);
+        await this.page.getByRole('option', { name: '03 h' }).click();
+        await this.page.waitForTimeout(3000);
+        await this.page.getByLabel('', { exact: true }).nth(1).click();
+        await this.page.waitForTimeout(3000);
+        await this.page.getByRole('option', { name: '00 m' }).click();
+        await this.page.locator('#leaveSystemUpdateClick').click();
+    }
+
+    async requestforapprovalstatusValidation(){
+        await this.page.getByRole('combobox', { name: 'Open' }).click();
+        await this.page.getByRole('option', { name: 'Request For Approval' }).click();
+        await this.page.locator('#modalComment_rte-edit-view').click();
+        await this.page.locator('#modalComment_rte-edit-view').fill('Test request for approval status');
+        await this.page.locator('#requestForApprovalClick').click();
+    }
+
+    async requestforclarificationstatusValidation(){
+        await this.page.getByRole('combobox', { name: 'Request For Approval' }).click();
+        await this.page.getByRole('option', { name: 'Request For Clarification' }).click();
+        await this.page.locator('#Statuscomments_rte-edit-view').click();
+        await this.page.locator('#Statuscomments_rte-edit-view').fill('Test Request for clarification status');
+        await this.page.locator('#TaskStatusUpdateClick').click();        
+    }
+
+    async rejectedtatusValidation(){
+        await this.page.getByRole('combobox', { name: 'Request For Clarification' }).click();
+        await this.page.getByRole('option', { name: 'Rejected' }).click();
+        await this.page.locator('#Statuscomments_rte-edit-view').click();
+        await this.page.locator('#Statuscomments_rte-edit-view').fill('Test');
+        await this.page.locator('#TaskStatusUpdateClick').click();
+    }
+
+    async approvedstatusValidation(){
+        await this.page.getByRole('combobox', { name: 'Rejected' }).click();
+        await this.page.getByRole('option', { name: 'Open' }).click();
+        await this.page.locator('#Statuscomments_rte-edit-view').fill('Test Open status');
+        await this.page.locator('#TaskStatusUpdateClick').click();
+        await this.page.getByRole('combobox', { name: 'Open' }).locator('span').dblclick();
+        await this.page.getByRole('option', { name: 'Approved' }).click();
+        await this.page.locator('#Statuscomments_rte-edit-view').click();
+        await this.page.locator('#Statuscomments_rte-edit-view').fill('Test approved status');
+        await this.page.locator('#TaskStatusUpdateClick').click();
+    }
+
+    async cancelledstatusValidation(){
+        await this.page.getByRole('combobox', { name: 'Approved' }).click();
+        await this.page.getByRole('option', { name: 'Cancelled' }).click();
+        await this.page.locator('#Statuscomments_rte-edit-view').click();
+        await this.page.locator('#Statuscomments_rte-edit-view').fill('Test cancelled status');
+        await this.page.locator('#TaskStatusUpdateClick').click();
+    }
+
+    async deletelatenightpermissionValidation(){
+        await this.page.locator('#DeleteLeave').click();
+        await this.page.locator('#deleteleave').click();
+        await expect(this.page.getByText('Permission Request has been')).toBeVisible();
+    }
 }

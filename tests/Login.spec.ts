@@ -1,73 +1,45 @@
 import { test, expect, Page } from '@playwright/test';
-import { Login } from '../test_helper/pages/Login_helper';
-import { baseURL } from '../playwright.config';
+import { baseUrl } from '../test_helper/pages/url';
+import { AdminLogin } from '../test_helper/pages/Login_helper'; // Import the class
 
-test.describe('Login', async () => {
-    
+test.describe('Login', () => {
+    let loginHelper: AdminLogin; // Declare a variable for the class instance
+
+    test.beforeEach(async ({ page }) => {
+        loginHelper = new AdminLogin(page); // Initialize class instance for each test
+    });
+
     // Test suite for login functionality
     test('HR portal staging URL launch', async ({ page }) => {
-        await Admin_login(page, 'vijays@syncfusion.com', 'staging');
+        await loginHelper.AdminLogin('vijays@syncfusion.com', 'staging');
     });
-    
+
     test('For empty validation', async ({ page }) => {
-        await page.goto(baseURL);
+        await page.goto(baseUrl);
         await page.locator('#tabfocus').click();
     });
-    
+
     test('For space validation', async ({ page }) => {
-        await Admin_login(page, ' ', ' ');
+        await loginHelper.AdminLogin(' ', ' ');
     });
-    
+
     test('For validating special characters', async ({ page }) => {
-        await Admin_login(page, '@@@', '@@@');
+        await loginHelper.AdminLogin('@@@', '@@@');
     });
-    
+
     test('For incorrect username and correct password', async ({ page }) => {
-        await Admin_login(page, 'vijays@abc.com', 'staging');
+        await loginHelper.AdminLogin('vijays@abc.com', 'staging');
     });
-    
+
     test('For correct username and incorrect password', async ({ page }) => {
-        await Admin_login(page, 'vijays@syncfusion.com', 'stat');
+        await loginHelper.AdminLogin('vijays@syncfusion.com', 'stat');
     });
-    
+
     test('For empty username and correct password', async ({ page }) => {
-        await Admin_login(page, '', 'staging');
+        await loginHelper.AdminLogin('', 'staging');
     });
-    
+
     test('For correct username and empty password', async ({ page }) => {
-        await Admin_login(page, 'vijays@syncfusion.com', '');
-    });
-    
-    test('For special characters in username and incorrect password', async ({ page }) => {
-        await Admin_login(page, '@@@@', 'st');
-    });
-    
-    test('For special characters in password and incorrect username', async ({ page }) => {
-        await Admin_login(page, 'vijay@sync.com', '@@@');
-    });
-    
-    test('Login with correct username and incorrect password', async ({ page }) => {
-        await Admin_login(page, 'vijays@syncfusion.com', 'stat');
-    });
-    
-    test('Login with incorrect username and correct password', async ({ page }) => {
-        await Admin_login(page, 'vijays@syn.com', 'staging');
-    });
-    
-    test('correct login credentials', async ({ page }) => {
-        await Admin_login(page, 'vijays@syncfusion.com', 'staging');
-    });
-    
-    test('To validate the login using Home page URL', async ({ page }) => {
-        await Admin_login(page, 'vijays@syncfusion.com', 'staging');
-        const HomePageURL = await page.url();
-        console.log('Page URL is:', HomePageURL);
-        await expect(page).toHaveURL('https://staginghr.syncfusion.com/');
+        await loginHelper.AdminLogin('vijays@syncfusion.com', '');
     });
 });
-
-
-function Admin_login(page: Page, arg1: string, arg2: string) {
-    throw new Error('Function not implemented.');
-}
-

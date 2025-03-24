@@ -17,7 +17,7 @@ test.describe("General Permission", () => {
         frontOffice = new FrontOfficeLogin(page);
         createPermission = new Create_Permission(page);
         await frontOffice.login("freedap@syncfusion.com", "staging");
-        
+
     });
 
     test("Create Permission Page", async () => {
@@ -25,7 +25,7 @@ test.describe("General Permission", () => {
     });
 
     test("Verify empty validations in create permission", async () => {
-  
+
         await createPermission.emptyValidations();
     })
 
@@ -87,6 +87,58 @@ test.describe("General Permission", () => {
 
     test ("Verify by adding data in the comment field", async()=>{
         await createPermission.updatecommentwithdataValidation();
+    })
+
+    test("Verify the general permission status is changed to cancelled", async()=>{
+        await createPermission.statuscancelValidation();
+    })
+
+    test("Verify by deleting the general permission", async ()=> {
+        await createPermission.deletepermissionValidation();
+    })
+
+    test.afterAll(async () => {
+        await context.close();
+    });
+});
+
+
+test.describe("Late Night Permission", () => {
+
+    test.beforeAll(async ({ browser }) => {
+        context = await browser.newContext();
+        page = await context.newPage();
+        frontOffice = new FrontOfficeLogin(page);
+        createPermission = new Create_Permission(page);
+        await frontOffice.login("freedap@syncfusion.com", "staging");
+    });
+
+    test("Verify the creation of late night permission", async ()=>{
+        await createPermission.latenightPermissioncreation();
+    })
+
+    test("Verify the request for approval status for late night permission", async()=>{
+        await createPermission.requestforapprovalstatusValidation();
+    })
+
+    test("Verify the request for clarification for late night permission", async()=>{
+        await createPermission.requestforclarificationstatusValidation();
+    })
+
+    test("Verify the rejected status for late night permission", async()=>{
+        await createPermission.rejectedtatusValidation();
+    })
+
+    test("Verify the approved status for late night permission", async ()=>{
+        await createPermission.approvedstatusValidation();
+    })
+
+    test("Verify the cancelled status for late night permission", async()=>{
+        await createPermission.cancelledstatusValidation();
+    })
+
+    test("Verify by deleting the late night permission", async()=>{
+        await createPermission.deletelatenightpermissionValidation();
     })
 
     test.afterAll(async () => {
