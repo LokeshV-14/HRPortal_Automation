@@ -265,6 +265,4 @@ export class Create_Permission {
         await this.page.locator('#deleteleave').click();
         await expect(this.page.getByText('Permission Request has been')).toBeVisible();
     }
-
-    
 }
