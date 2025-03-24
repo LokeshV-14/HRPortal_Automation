@@ -1,0 +1,832 @@
+{
+  "config": {
+    "configFile": "D:\\Git\\HRPortal_Automation\\playwright.config.ts",
+    "rootDir": "D:/Git/HRPortal_Automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "jsonReports/jsonReport.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/Git/HRPortal_Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Git/HRPortal_Automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 200000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "3way",
+    "version": "1.50.1",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "Permission.spec.ts",
+      "file": "Permission.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "General Permission",
+          "file": "Permission.spec.ts",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Create Permission Page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 21380,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:41:53.810Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permission-Create-Permission-Page-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permission-Create-Permission-Page-chromium\\test-finished-2.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permission-Create-Permission-Page-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-764dc305510a48842b74",
+              "file": "Permission.spec.ts",
+              "line": 23,
+              "column": 9
+            },
+            {
+              "title": "Verify empty validations in create permission",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 4801,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:33.948Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-615ce-ations-in-create-permission-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-615ce-ations-in-create-permission-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-c46d896167fecba41e48",
+              "file": "Permission.spec.ts",
+              "line": 27,
+              "column": 9
+            },
+            {
+              "title": "Verify by selecting live chat 10:30 morning employee and shift validation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1495,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:40.429Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-5e618-ployee-and-shift-validation-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-5e618-ployee-and-shift-validation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-75f46ca8285cdf7405e2",
+              "file": "Permission.spec.ts",
+              "line": 32,
+              "column": 9
+            },
+            {
+              "title": "Verify by selecting Noon shift employee and the shift field validation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1359,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:43.095Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-694d8--the-shift-field-validation-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-694d8--the-shift-field-validation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-86337d0a921493db0ae8",
+              "file": "Permission.spec.ts",
+              "line": 36,
+              "column": 9
+            },
+            {
+              "title": "Verify by selecting night shift employee and shift validation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1400,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:45.330Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-5130a-ployee-and-shift-validation-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-5130a-ployee-and-shift-validation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-c53d21c646cce3458761",
+              "file": "Permission.spec.ts",
+              "line": 40,
+              "column": 9
+            },
+            {
+              "title": "Verify by selecting Early evening shift employee and shift validation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1403,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:47.668Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-39887-ployee-and-shift-validation-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-39887-ployee-and-shift-validation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-786e18992f0a846bfa75",
+              "file": "Permission.spec.ts",
+              "line": 44,
+              "column": 9
+            },
+            {
+              "title": "Verify by selecting Regular shift employee and shift field validation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1313,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:50.300Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-546bd--and-shift-field-validation-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-546bd--and-shift-field-validation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-61fd9f71671b68629d16",
+              "file": "Permission.spec.ts",
+              "line": 48,
+              "column": 9
+            },
+            {
+              "title": "Verify the Negative case validation for the Late noon shift employee",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1455,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:52.576Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-58ae1-he-Late-noon-shift-employee-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-58ae1-he-Late-noon-shift-employee-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-b4068488e309385aaecd",
+              "file": "Permission.spec.ts",
+              "line": 52,
+              "column": 9
+            },
+            {
+              "title": "Verify the attachment validation for file more than 5mb",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2423,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:55.224Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-7c692-tion-for-file-more-than-5mb-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-7c692-tion-for-file-more-than-5mb-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-6dbd42ba1c7ae4a8268e",
+              "file": "Permission.spec.ts",
+              "line": 56,
+              "column": 9
+            },
+            {
+              "title": "Verify the success message is shown when less than 5 mb file is uploaded",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 6436,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:42:58.819Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-ec292--than-5-mb-file-is-uploaded-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-ec292--than-5-mb-file-is-uploaded-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-3e94df03408a6ce5d92c",
+              "file": "Permission.spec.ts",
+              "line": 60,
+              "column": 9
+            },
+            {
+              "title": "Verify the general permission successful creation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 23693,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:43:06.527Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-bbc9b-mission-successful-creation-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-bbc9b-mission-successful-creation-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-757fe9fa5900e7150a59",
+              "file": "Permission.spec.ts",
+              "line": 64,
+              "column": 9
+            },
+            {
+              "title": "Verify by changing the status open from closed for the general permission created",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 8051,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:43:32.946Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-dbf33--general-permission-created-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-dbf33--general-permission-created-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-73af4fcd1a7aff5f4fd4",
+              "file": "Permission.spec.ts",
+              "line": 68,
+              "column": 9
+            },
+            {
+              "title": "Verify the edit general permission by changing the permission date, time and number of hours",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 4533,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:43:42.922Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-caae1-te-time-and-number-of-hours-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-caae1-te-time-and-number-of-hours-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-f364f7c9150b73ee898c",
+              "file": "Permission.spec.ts",
+              "line": 72,
+              "column": 9
+            },
+            {
+              "title": "Verify when empty data is given in the comment field",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1902,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:43:49.354Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-5fb6c--given-in-the-comment-field-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-5fb6c--given-in-the-comment-field-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-1a0d76d37fc9a87c0c2a",
+              "file": "Permission.spec.ts",
+              "line": 76,
+              "column": 9
+            },
+            {
+              "title": "Verify by giving space alone in the comment field",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 701,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:43:52.870Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-4e4eb--alone-in-the-comment-field-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-4e4eb--alone-in-the-comment-field-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-f2212191b93503f4edbc",
+              "file": "Permission.spec.ts",
+              "line": 80,
+              "column": 9
+            },
+            {
+              "title": "Verify the comment field validation by uploading only file without comment",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 3451,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:43:55.027Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-79dc2-g-only-file-without-comment-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-79dc2-g-only-file-without-comment-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-25233e6044106b13c578",
+              "file": "Permission.spec.ts",
+              "line": 84,
+              "column": 9
+            },
+            {
+              "title": "Verify by adding data in the comment field",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 200000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 539,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-03-10T05:44:00.479Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-48a64-g-data-in-the-comment-field-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-48a64-g-data-in-the-comment-field-chromium\\test-finished-2.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Git\\HRPortal_Automation\\test-results\\Permission-General-Permiss-48a64-g-data-in-the-comment-field-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c4653be5535c6fe77f8-dd3e1a966a2d5ad00267",
+              "file": "Permission.spec.ts",
+              "line": 88,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-03-10T05:41:48.521Z",
+    "duration": 135829.29799999998,
+    "expected": 17,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
