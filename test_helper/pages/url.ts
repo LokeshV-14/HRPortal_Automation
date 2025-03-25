@@ -1,4 +1,4 @@
-export const baseUrl = process.env.BaseUrl || "https://staginghr.syncfusion.com/login?ReturnUrl=%2F";
+export const baseUrl = process.env.BaseUrl || "https://staginghr.syncfusion.com/";
 
 //Create permission URL:
-export const createPermissionUrl = process.env.CreatepermissionUrl || "https://staginghr.syncfusion.com/attendance/create?view=permission"
+export const createPermissionUrl = "attendance/create?view=permission"

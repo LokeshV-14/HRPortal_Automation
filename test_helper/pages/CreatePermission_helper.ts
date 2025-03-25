@@ -1,5 +1,6 @@
 import { expect, Page } from "@playwright/test";
-import { createPermissionUrl } from "./url";
+
+import { baseUrl, createPermissionUrl } from "./url";
 
 
 export class Create_Permission {
@@ -18,7 +19,7 @@ export class Create_Permission {
     }
 
     async emptyValidations() {  
-        await this.page.goto(createPermissionUrl)
+        await this.page.goto(baseUrl+createPermissionUrl)
         await this.page.locator('#leaveSystemUpdateClick').click();    
         await expect(this.page.getByText('Engineer is required.')).toBeVisible();
         await expect(this.page.getByText('General Permission is not applicable for the selected employee.')).toBeVisible();
@@ -99,7 +100,7 @@ export class Create_Permission {
     }
 
     async successfullgeneralPermission() {
-        await this.page.goto(createPermissionUrl)
+        await this.page.goto(baseUrl+createPermissionUrl)
         await this.page.locator('.e-input-group').first().click();
         await this.page.getByRole('dialog', { name: 'engineer' }).getByRole('combobox').fill('Lokesh');
         await this.page.getByText('Lokesh Playwright -').click();
@@ -113,12 +114,110 @@ export class Create_Permission {
         await this.page.waitForTimeout(3000);
         await this.page.locator('.generalpermision > .e-input-group > .e-input-group-icon').click();
         await this.page.waitForTimeout(3000);
-        await this.page.getByRole('option', { name: '1.0' }).click();
+        await this.page.getByRole('option', { name: '2.5' }).click();
         await this.page.locator('#leaveSystemUpdateClick').click();    
         const statusField = this.page.locator("(//span[@class='e-input-group e-control-wrapper e-ddl e-lib e-keyboard e-valid-input'])[1]");
         await expect(statusField).toHaveText("Closed");
         const permissionTypeField = this.page.locator("(//span[@class='e-input-group e-control-wrapper e-ddl e-lib e-keyboard e-valid-input'])[3]");
         await expect(permissionTypeField).toHaveText("General Permission");
+    }
+
+    async generalpermissionKenyaemployee(){
+        await this.page.goto(baseUrl+createPermissionUrl)
+        await this.page.locator('.e-input-group').first().click();
+        await this.page.getByRole('dialog', { name: 'engineer' }).getByRole('combobox').fill('Vinod');
+        await this.page.getByText('Vinod Kumar Rajan - vinodr@').click();
+        await this.page.locator('#summary').click();
+        await this.page.locator('#summary').fill('Test General Permission');
+        await this.page.locator('#leavesystemdescription_rte-edit-view').click();
+        await this.page.locator('#leavesystemdescription_rte-edit-view').fill('Test General Permission');
+        await this.page.getByPlaceholder('Select start date of your work').click();
+        await this.page.getByPlaceholder('Select start date of your work').fill('3/25/');
+        await this.page.getByRole('button', { name: 'select' }).first().click();
+        await this.page.getByTitle('Tuesday, March 25,').click();
+        await this.page.locator('.startTime > .inputdiv > .e-input-group > .e-input-group-icon').click();
+        await this.page.getByRole('option', { name: '02:00 PM' }).click();
+        await this.page.getByLabel('', { exact: true }).first().click();
+        await this.page.waitForTimeout(3000);
+        await this.page.getByRole('option', { name: '1.0' }).click();
+        await this.page.locator('#leaveSystemUpdateClick').click();
+        await this.page.locator('#DeleteLeave').click();
+        await this.page.locator('#deleteleave').click();
+    }
+    
+    async generalPermissionForEachHour() {
+        let hourOptions = ['0.5', '1.0', '1.5', '2.0'];
+    
+        for (let hours of hourOptions) {
+            // Navigate to the create permission page
+            try {
+                await this.page.goto(baseUrl + createPermissionUrl, { waitUntil: 'load', timeout: 60000 });
+            } catch (error) {
+                console.error("Navigation failed:", error);
+                continue; // Skip to the next iteration if navigation fails
+            }
+    
+            // Select the engineer
+            await this.page.locator('.e-input-group').first().click();
+            await this.page.getByRole('dialog', { name: 'engineer' }).getByRole('combobox').fill('Maith');
+            await this.page.getByText('Maithiliy Karthikeyan -').click();
+    
+            // Fill in the summary and description
+            await this.page.locator('#summary').fill('Test General Permission');
+            await this.page.locator('#leavesystemdescription_rte-edit-view').fill('Test general permission');
+    
+            // Select the date
+            await this.page.getByRole('button', { name: 'select' }).first().click();
+            await this.page.getByTitle('Tuesday, March 25,').click();
+    
+            // Select the start time
+            await this.page.locator('.startTime > .inputdiv > .e-input-group > .e-input-group-icon').click();
+            await this.page.getByRole('option', { name: '10:00 AM' }).click();
+    
+            // Select the number of hours
+            if (hours) {
+                await this.page.getByLabel('', { exact: true }).first().click();
+                await this.page.waitForTimeout(2000);
+                await this.page.getByRole('option', { name: hours }).click();
+            }
+    
+            // Submit the permission
+            await this.page.locator('#leaveSystemUpdateClick').click();
+    
+            // Wait for confirmation message (optional, modify selector accordingly)
+            //await this.page.waitForSelector('#confirmationMessage', { timeout: 5000 });
+    
+            // Delete the permission
+            await this.page.waitForTimeout(3000);
+            await this.page.locator('#DeleteLeave').click();
+            await this.page.locator('#deleteleave').click();
+    
+            // Wait for deletion to complete before navigating again
+            await this.page.waitForTimeout(3000);
+    
+            // Re-navigate to create permission page for the next iteration
+            await this.page.goto(baseUrl + createPermissionUrl, { waitUntil: 'load', timeout: 60000 });
+        }
+    }    
+
+    async generalpermissionlivechatmorning1030shiftEmployee(){
+        await this.page.goto(baseUrl+createPermissionUrl)
+        await this.page.locator('.e-input-group').first().click();
+        await this.page.getByRole('dialog', { name: 'engineer' }).getByRole('combobox').fill('Maith');
+        await this.page.getByText('Maithiliy Karthikeyan -').click();
+        await this.page.locator('#summary').click();
+        await this.page.locator('#summary').fill('Test General Permission');
+        await this.page.locator('#leavesystemdescription_rte-edit-view').click();
+        await this.page.locator('#leavesystemdescription_rte-edit-view').fill('Test general permission');
+        await this.page.getByRole('button', { name: 'select' }).first().click();
+        await this.page.getByTitle('Tuesday, March 25,').click();
+        await this.page.locator('.startTime > .inputdiv > .e-input-group > .e-input-group-icon').click();
+        await this.page.getByRole('option', { name: '10:00 AM' }).click();
+        await this.page.getByLabel('', { exact: true }).first().click();
+        await this.page.getByRole('option', { name: '3.0' }).click();
+        await this.page.locator('#leaveSystemUpdateClick').click();
+        await this.page.locator('#DeleteLeave').click();
+        await this.page.locator('#deleteleave').click();
     }
 
     async changeOpenstatus(){
@@ -192,7 +291,7 @@ export class Create_Permission {
     }
 
     async latenightPermissioncreation(){
-        await this.page.goto('https://staginghr.syncfusion.com/attendance/create?view=permission');
+        await this.page.goto(baseUrl+createPermissionUrl);
         await this.page.locator('.e-input-group').first().click();
         await this.page.getByRole('dialog', { name: 'engineer' }).getByRole('combobox').fill('Lokesh');
         await this.page.getByText('Lokesh Playwright -').click();
@@ -264,5 +363,26 @@ export class Create_Permission {
         await this.page.locator('#DeleteLeave').click();
         await this.page.locator('#deleteleave').click();
         await expect(this.page.getByText('Permission Request has been')).toBeVisible();
+    }
+    getRandomTime() {
+        const startMinutes = 10 * 60 + 30; // 10:30 AM
+        const endMinutes = 19 * 60 + 30;   // 7:30 PM
+        const excludeStart = 13 * 60;      // 1:00 PM
+        const excludeEnd = 14 * 60;        // 2:00 PM
+
+        let randomMinutes;
+        do {
+            randomMinutes = Math.floor(Math.random() * (endMinutes - startMinutes + 1)) + startMinutes;
+        } while (randomMinutes >= excludeStart && randomMinutes < excludeEnd); // Avoid 1-2 PM
+
+        // Convert minutes to HH:MM AM/PM format
+        let hours = Math.floor(randomMinutes / 60);
+        let minutes = randomMinutes % 60;
+        let period = hours >= 12 ? "PM" : "AM";
+
+        if (hours > 12) hours -= 12; // Convert to 12-hour format
+        if (hours === 0) hours = 12; // Handle midnight case
+
+        return `${hours}:${minutes.toString().padStart(2, "0")} ${period}`;
     }
 }

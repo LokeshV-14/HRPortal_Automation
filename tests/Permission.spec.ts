@@ -97,6 +97,18 @@ test.describe("General Permission", () => {
         await createPermission.deletepermissionValidation();
     })
 
+    test("Verify the general permission creation for Kenya employee", async()=>{
+        await createPermission.generalpermissionKenyaemployee();
+    })
+
+    test("Verify the general permission creation for morning 10:30 AM shift", async()=>{
+        await createPermission.generalpermissionlivechatmorning1030shiftEmployee();
+    })
+
+    test('Verify the general permission for each number of hours', async () => {
+        await createPermission.generalPermissionForEachHour();
+    });
+
     test.afterAll(async () => {
         await context.close();
     });
