@@ -214,6 +214,7 @@ export class Create_Permission {
         await this.page.locator('.startTime > .inputdiv > .e-input-group > .e-input-group-icon').click();
         await this.page.getByRole('option', { name: '10:00 AM' }).click();
         await this.page.getByLabel('', { exact: true }).first().click();
+        await this.page.waitForTimeout(2000);
         await this.page.getByRole('option', { name: '3.0' }).click();
         await this.page.locator('#leaveSystemUpdateClick').click();
         await this.page.locator('#DeleteLeave').click();
@@ -241,8 +242,10 @@ export class Create_Permission {
         await this.page.getByRole('combobox', { name: 'datepicker' }).fill('02/Mar/2025');
         await this.page.locator('#createLeaveSystemForm div').filter({ hasText: 'Start Time' }).locator('span').nth(2).click();
         await this.page.getByRole('option', { name: '05:30 PM' }).click();
-        await this.page.getByRole('combobox', { name: '1.0' }).click();
+        await this.page.waitForTimeout(1000);
+        await this.page.getByRole('combobox', { name: '2.5' }).click();
         await this.page.getByRole('option', { name: '2.0' }).click();
+        await this.page.waitForTimeout(1000);
         await this.page.getByRole('button', { name: 'Update' }).click();
         const permissionDateField = this.page.locator("//input[@id='permissiondate']");
         await expect(permissionDateField).toHaveValue("02/Mar/25");
