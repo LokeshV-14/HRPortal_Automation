@@ -115,8 +115,10 @@ export class Create_Permission {
         await this.page.locator('.generalpermision > .e-input-group > .e-input-group-icon').click();
         await this.page.waitForTimeout(3000);
         await this.page.getByRole('option', { name: '2.5' }).click();
-        await this.page.locator('#leaveSystemUpdateClick').click();    
+        await this.page.locator('#leaveSystemUpdateClick').click();  
+        await this.page.waitForTimeout(1500);  
         const statusField = this.page.locator("(//span[@class='e-input-group e-control-wrapper e-ddl e-lib e-keyboard e-valid-input'])[1]");
+        await this.page.waitForTimeout(1500);
         await expect(statusField).toHaveText("Closed");
         const permissionTypeField = this.page.locator("(//span[@class='e-input-group e-control-wrapper e-ddl e-lib e-keyboard e-valid-input'])[3]");
         await expect(permissionTypeField).toHaveText("General Permission");
@@ -188,7 +190,7 @@ export class Create_Permission {
             //await this.page.waitForSelector('#confirmationMessage', { timeout: 5000 });
     
             // Delete the permission
-            await this.page.waitForTimeout(3000);
+            await this.page.waitForTimeout(2000);
             await this.page.locator('#DeleteLeave').click();
             await this.page.locator('#deleteleave').click();
     
@@ -196,7 +198,7 @@ export class Create_Permission {
             await this.page.waitForTimeout(3000);
     
             // Re-navigate to create permission page for the next iteration
-            await this.page.goto(baseUrl + createPermissionUrl, { waitUntil: 'load', timeout: 60000 });
+            await this.page.goto(baseUrl + createPermissionUrl, { waitUntil: 'load', timeout: 65000 });
         }
     }    
 
@@ -270,17 +272,19 @@ export class Create_Permission {
     async fileuploawithoutncommentValidation(){
         await this.page.setInputFiles('input[type="file"]', './Data/3-mb-sample-pdf-file.pdf');
         await this.page.locator('(//a[text()="Save"])[2]').click();
-        //await expect(this.page.getByText('The Comments field is required.')).toBeVisible();
     }
 
     async updatecommentwithdataValidation(){
+        await this.page.waitForTimeout(1000);
         await this.page.getByRole('link', { name: 'Comments' }).click();
         await this.page.locator('(//a[text()="Save"])[2]').click();
         //await expect(this.page.getByText('Comment has been updated.')).toBeVisible();
     }
 
     async statuscancelValidation(){
+        await this.page.waitForTimeout(500);
         await this.page.getByRole('combobox', { name: 'Open' }).locator('span').click();
+        await this.page.waitForTimeout(500);
         await this.page.getByRole('option', { name: 'Cancelled' }).click();
         await this.page.locator('#Statuscomments_rte-edit-view').click();
         await this.page.locator('#Statuscomments_rte-edit-view').fill('Test');
@@ -294,11 +298,13 @@ export class Create_Permission {
     }
 
     async latenightPermissioncreation(){
+        await this.page.waitForTimeout(1000);
         await this.page.goto(baseUrl+createPermissionUrl);
         await this.page.locator('.e-input-group').first().click();
         await this.page.getByRole('dialog', { name: 'engineer' }).getByRole('combobox').fill('Lokesh');
         await this.page.getByText('Lokesh Playwright -').click();
         await this.page.getByRole('combobox', { name: 'General Permission' }).click();
+        await this.page.waitForTimeout(500);
         await this.page.getByText('Late Night Permissionnull').click();
         await this.page.locator('#summary').click();
         await this.page.locator('#summary').fill('Test Late night permission');
@@ -366,26 +372,5 @@ export class Create_Permission {
         await this.page.locator('#DeleteLeave').click();
         await this.page.locator('#deleteleave').click();
         await expect(this.page.getByText('Permission Request has been')).toBeVisible();
-    }
-    getRandomTime() {
-        const startMinutes = 10 * 60 + 30; // 10:30 AM
-        const endMinutes = 19 * 60 + 30;   // 7:30 PM
-        const excludeStart = 13 * 60;      // 1:00 PM
-        const excludeEnd = 14 * 60;        // 2:00 PM
-
-        let randomMinutes;
-        do {
-            randomMinutes = Math.floor(Math.random() * (endMinutes - startMinutes + 1)) + startMinutes;
-        } while (randomMinutes >= excludeStart && randomMinutes < excludeEnd); // Avoid 1-2 PM
-
-        // Convert minutes to HH:MM AM/PM format
-        let hours = Math.floor(randomMinutes / 60);
-        let minutes = randomMinutes % 60;
-        let period = hours >= 12 ? "PM" : "AM";
-
-        if (hours > 12) hours -= 12; // Convert to 12-hour format
-        if (hours === 0) hours = 12; // Handle midnight case
-
-        return `${hours}:${minutes.toString().padStart(2, "0")} ${period}`;
     }
 }

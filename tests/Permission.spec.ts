@@ -20,7 +20,7 @@ test.describe("General Permission", () => {
 
     });
 
-    test("Create Permission Page", async () => {
+    test("Verify the create Permission Page navigation", async () => {
         await createPermission.createPermission();
     });
 
